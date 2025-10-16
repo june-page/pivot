@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- For social media thumbnail preview -->
     <meta property="og:image" content="https://github.com/june-page/pivot/blob/main/assets/figures/thumbnail.png?raw=true" />
-    <title>Web-SSL: Scaling Language-Free Visual Representation Learning</title>
+    <title>RL makes MLLMs see better than SFT</title>
     <!-- Bootstrap CSS -->
+    <!-- <link href="vendor/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
+    <!-- <link href="vendor/css/all.min.css" rel="stylesheet"> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts - Nunito as Avenir Next alternative -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -26,49 +28,34 @@
     <header class="header-section" id="overview">
         <div class="container">
             <div class="row">
-                <div class="col-lg-11 mx-auto text-center">
-                    <h1 class="paper-title">Scaling Language-Free Visual Representation Learning</h1>
+                <div class="col-lg-11 mx-auto text-center" >
+                    <h1 class="paper-title">RL makes MLLMs see better than SFT</h1>
                     <div class="author-line">
-                        <span><a href="https://davidfan.io/" class="author-link">David Fan<sup>1,*</sup></a></span>
-                        <span><a href="https://tsb0601.github.io/" class="author-link">Shengbang Tong<sup>1,2,*</sup></a></span>
-                        <span><a href="https://jiachenzhu.github.io/" class="author-link">Jiachen Zhu<sup>1,2</sup></a></span>
-                        <span><a href="https://koustuvsinha.com/" class="author-link">Koustuv Sinha<sup>1</sup></a></span>
-                        <span><a href="https://liuzhuang13.github.io/" class="author-link">Zhuang Liu<sup>1,3</sup></a></span>
-                        <span><a href="https://xinleic.xyz/" class="author-link">Xinlei Chen<sup>1</sup></a></span>
-                    </div>
-                    <div class="author-line">
-                        <span><a href="https://scholar.google.ca/citations?user=cMPKe9UAAAAJ&hl=en" class="author-link">Michael Rabbat<sup>1</sup></a></span>
-                        <span><a href="https://scholar.google.com/citations?user=euUV4iUAAAAJ&hl=en" class="author-link">Nicolas Ballas<sup>1</sup></a></span>
-                        <span><a href="https://scholar.google.com/citations?user=WLN3QrAAAAAJ&hl=en" class="author-link">Yann LeCun<sup>1,2</sup></a></span>
-                        <span><a href="https://www.amirbar.net/" class="author-link">Amir Bar<sup>1,†</sup></a></span>
-                        <span><a href="https://www.sainingxie.com/" class="author-link">Saining Xie<sup>2,†</sup></a></span>
+                        <span><a href="https://www.junha.page/p/about.html" class="author-link">Junha Song<sup>1,2</sup></a></span>
+                        <span><a href="https://sangdooyun.github.io/" class="author-link">Sangdoo Yun<sup>2</sup></a></span>
+                        <span><a href="https://sites.google.com/site/dyhan0920/" class="author-link">Dongyoon Han<sup>2</sup></a></span>
+                        <span><a href="https://sites.google.com/site/jaegulchoo/" class="author-link">Jaegul Choo<sup>1,†</sup></a></span>
+                        <span><a href="https://sites.google.com/view/byeongho-heo/home" class="author-link">Byeongho Heo<sup>2,†</sup></a></span>
                     </div>
                     <div class="equal-contribution mt-2">
-                        <span><sup>*</sup> Equal contribution</span>
-                        <span class="mx-2">|</span>
-                        <span><sup>†</sup> Equal advising</span>
+                        <span><sup>†</sup>Corresponding authors</span>
                     </div>
                     <div class="institution-logos mt-4">
                         <div class="institution-logo-wrapper">
-                            <img src="assets/logos/meta.png" alt="FAIR, Meta" class="institution-logo">
+                            <img src="assets/logos/kaist.png" alt="KAIST" class="institution-logo">
                             <sup>1</sup>
                         </div>
                         <div class="institution-logo-wrapper">
-                            <img src="assets/logos/nyu.png" alt="New York University" class="institution-logo">
+                            <img src="assets/logos/naver.png" alt="NAVER AI Lav" class="institution-logo">
                             <sup>2</sup>
                         </div>
-                        <div class="institution-logo-wrapper princeton-logo">
-                            <img src="assets/logos/princeton.png" alt="Princeton University" class="institution-logo">
-                            <sup>3</sup>
-                        </div>
                     </div>
-                    <div class="mt-4">
+                    <!-- <div class="mt-4">
                     <div class="paper-subtitle">ICCV 2025 (Highlight)</div>
-                    </div>
+                    </div> -->
                     <div class="mt-4">
-                        <a href="https://arxiv.org/abs/2504.01017" class="btn primary-btn me-2"><i class="fas fa-file-alt me-2"></i>Paper</a>
-                        <a href="https://github.com/facebookresearch/webssl" class="btn secondary-btn me-2"><i class="fab fa-github me-2"></i>Code</a>
-                        <a href="https://huggingface.co/collections/facebook/web-ssl-68094132c15fbd7808d1e9bb" class="btn accent-btn"><i class="fas fa-weight-hanging me-2"></i>Model Weights</a>
+                        <a href="https://june-page.github.io/pivot/" class="btn primary-btn me-2"><i class="fas fa-file-alt me-2"></i>Paper</a>
+                        <a href="https://june-page.github.io/pivot/" class="btn secondary-btn me-2"><i class="fab fa-github me-2"></i>Code</a>
                     </div>
                 </div>
             </div>
@@ -82,7 +69,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-11 mx-auto">
-                    <div class="updates-box p-4 rounded mb-5" style="background-color: rgba(37, 99, 235, 0.05); border-left: 4px solid var(--primary-color); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);">
+                    <div class="updates-box p-4 rounded mb-5" style="background-color: rgba(37, 235, 86, 0.05); border-left: 4px solid var(--primary-color); box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);">
                         <h2 class="section-title mb-3">News & Updates</h2>
                         <ul class="updates-list" style="list-style-type: none; padding-left: 0;">
                             <li class="mb-2 d-flex align-items-start">
@@ -141,11 +128,11 @@
 <!-- Enhanced TLDR Section -->
 <section class="row" id="tldr">
     <div class="col-lg-11 mx-auto">
-        <div class="tldr-box p-4 rounded mb-5 mt-4" style="background-color: rgba(191, 203, 229, 0.1); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);">
+        <div class="tldr-box p-4 rounded mb-5 mt-4" style="background-color: rgba(112, 237, 119, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);">
             <h2 class="mb-3 text-center" style="color: var(--primary-color); font-size: 2.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">TL;DR</h2>
             <div class="row mb-2">
                 <div class="col-md-12">
-                    <div class="p-4 mb-2 rounded" style="background-color: rgba(255, 255, 255, 0.9); border: 2px solid rgba(37, 99, 235, 0.3); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
+                    <div class="p-4 mb-2 rounded" style="background-color: rgba(255, 255, 255, 0.9); border: 2px solid rgba(37, 235, 86, 0.3); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);">
                         <p class="lead fw-bold mb-0" style="color: var(--primary-color); font-size: 1.5rem; text-align: left;">
                             Is language supervision required to learn effective visual representations for multimodal tasks?
                         </p>
@@ -265,7 +252,7 @@
                                     </div>
                                     <!-- Key insights -->
                                     <div class="col-md-5 mt-2">
-                                        <div class="p-3 rounded" style="background-color: rgba(37, 99, 235, 0.05);">
+                                        <div class="p-3 rounded" style="background-color: rgba(37, 235, 86, 0.05);">
                                             <h5 class="mb-3">Average VQA Performance of Web-DINO Trained on MC-2B</h5>
                                             <div class="d-flex align-items-center mb-2">
                                                 <span style="width: 80px; text-align: left; font-size: 0.9rem;">1B params</span>
@@ -784,7 +771,7 @@
                 <div class="col-lg-11 mx-auto">
                     <h2 class="section-title">Key Takeaways</h2>
                     
-                    <div class="highlight-box p-4" style="background-color: rgba(37, 99, 235, 0.05); border-radius: 15px; border-left: 8px solid var(--primary-color);">
+                    <div class="highlight-box p-4" style="background-color: rgba(37, 235, 86, 0.05); border-radius: 15px; border-left: 8px solid var(--primary-color);">
                         <div class="row">
                             <div class="col-md-12">
                                 <ul class="findings-list" style="list-style-type: none; padding-left: 0;">
@@ -996,7 +983,7 @@
     }
     
     .question-header:hover {
-        background-color: rgba(37, 99, 235, 0.05);
+        background-color: rgba(37, 235, 86, 0.05);
     }
     
     .question-header .fas {

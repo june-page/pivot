@@ -1,8 +1,8 @@
 /* Professional Modern Color Scheme */
 :root {
     /* Modern color palette */
-    --primary-color: #2D5F8B;       /* Deep Blue */
-    --secondary-color: #5E8C61;     /* Forest Green */
+    --primary-color: #84B261;       /* Deep Blue */
+    --secondary-color: #516a80;     /* Forest Green */
     --accent-color: #6366F1;        /* Indigo */
     --light-color: #FFFFFF;         /* Pure White */
     --dark-color: #1F2937;          /* Deep Charcoal */
@@ -12,7 +12,7 @@
     
     /* Simplified gradients */
     --header-gradient: linear-gradient(to bottom, #F8F9FA, #FFFFFF);
-    --footer-gradient: linear-gradient(to right, #1F2937, #2D5F8B);
+    --footer-gradient: linear-gradient(to right, #1F2937, #84B261);
     --nav-gradient: var(--primary-color);  /* Solid color instead of gradient */
     
     --header-text-color: #1F2937;
@@ -31,14 +31,14 @@
 
 /* Button hover states */
 .primary-btn:hover {
-    background-color: #1D4267; /* Darker blue */
+    background-color: #56743f; /* Darker blue */
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(45, 95, 139, 0.3);
 }
 
 .secondary-btn:hover {
-    background-color: #4A704D; /* Darker green */
+    background-color: #1D4267; /* Darker green */
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(94, 140, 97, 0.3);
@@ -53,15 +53,15 @@
 
 /* Progress bar colors */
 .progress-bar[style*="background-color: #93c5fd"] {
-    background-color: #8CAACB !important; /* Lighter blue */
+    background-color: #bdcab4 !important; /* Lighter blue */
 }
 
 .progress-bar[style*="background-color: #60a5fa"] {
-    background-color: #5E8EBF !important; /* Light blue */
+    background-color: #b2c8a0 !important; /* Light blue */
 }
 
 .progress-bar[style*="background-color: #3b82f6"] {
-    background-color: #427AA5 !important; /* Medium blue */
+    background-color: #a5cb86 !important; /* Medium blue */
 }
 
 .progress-bar[style*="background-color: #2563eb"] {
@@ -70,19 +70,19 @@
 
 /* Indigo progress bars */
 .progress-bar[style*="background-color: #fdba74"] {
-    background-color: #A5B4FC !important; /* Lighter indigo */
+    background-color: rgb(190, 225, 164) !important; /* Lighter indigo */
 }
 
 .progress-bar[style*="background-color: #fb923c"] {
-    background-color: #818CF8 !important; /* Light indigo */
+    background-color: #9fc481 !important; /* Light indigo */
 }
 
 .progress-bar[style*="background-color: #f97316"] {
-    background-color: #6366F1 !important; /* Medium indigo */
+    background-color: #8aaa70 !important; /* Medium indigo */
 }
 
 .progress-bar[style*="background-color: #ea580c"] {
-    background-color: #4F46E5 !important; /* Dark indigo */
+    background-color: #799562 !important; /* Dark indigo */
 }
 
 /* Additional crisp theme adjustments */
