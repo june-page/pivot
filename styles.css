@@ -1,8 +1,8 @@
 /* Theme Variables */
 /* Theme Variables */
 :root {
-    --primary-color: #2D5F8B;       /* Deep Blue */
-    --secondary-color: #5E8C61;     /* Forest Green */
+    --primary-color: #84B261;       /* Deep Blue */
+    --secondary-color: #516a80;     /* Forest Green */
     --accent-color: #6366F1;        /* Indigo */
     --light-color: #FFFFFF;         /* Pure White */
     --dark-color: #000000;          /* Deep Charcoal */
@@ -10,7 +10,7 @@
     --background-color: #FFFFFF;    /* White Background */
     --card-background: #FFFFFF;
     --header-gradient: linear-gradient(135deg, #EBF3FA 0%, #FFFFFF 100%);
-    --footer-gradient: linear-gradient(135deg, #1F2937 0%, #2D5F8B 100%);
+    --footer-gradient: linear-gradient(to right, #1F2937, #84B261);
     --nav-gradient: linear-gradient(90deg, #1F2937 0%, #2D5F8B 100%);
     --header-text-color: #333333;
     --footer-text-color: #ffffff;
