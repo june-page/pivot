@@ -230,9 +230,9 @@ body {
 
 .figure-caption {
     margin-top: 15px;
-    font-size: 0.95rem;
+    font-size: 1.rem;
     color: var(--text-color);
-    max-width: 90%;
+    max-width: 85%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -483,10 +483,10 @@ body {
     overflow: hidden;
 }
 
-.scaling-card:hover {
+/* .scaling-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-}
+} */
 
 .scaling-card::before {
     content: "";
@@ -497,7 +497,7 @@ body {
     height: 5px;
 }
 
-.vit-scaling::before {
+.mllm-scaling::before {
     background: var(--primary-color);
 }
 
@@ -507,7 +507,7 @@ body {
 
 .scaling-title {
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 15px;
     color: var(--dark-color);
 }
@@ -517,7 +517,7 @@ body {
     margin-bottom: 15px;
 }
 
-.vit-scaling .scaling-icon {
+.mllm-scaling .scaling-icon {
     color: var(--primary-color);
 }
 
@@ -551,7 +551,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8rem;
+    font-size: 1.rem;
     font-weight: bold;
 }
 
@@ -1371,4 +1371,44 @@ p.lead.fw-bold strong {
 
 .motivation-list li:last-child {
     margin-bottom: 0;
+}
+
+
+.study-highlight {
+    color: #315c51 !important;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+.study-highlight:hover {
+    color: #315c51 !important;
+}
+
+.study-hover-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 1200;
+}
+
+.study-hover-image img {
+    max-width: min(800px, 70vw);
+    height: auto;
+    display: block;
+}
+
+.study-highlight:hover .study-hover-image {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
 }

@@ -104,7 +104,8 @@
 <!-- @@@@@@@@@@@@@@@@@ Motivation @@@@@@@@@@@@@@@@@ -->
 <section class="row" id="approach">
     <div class="col-lg-11 mx-auto">
-        <h2 class="section-title">RL vs. SFT in MLLMs & <i>Vision Encoder</i></h2>
+        <h2 class="section-title">Research Motivation</h2>
+        <!-- RL vs. SFT in MLLMs & <i>Vision Encoder</i> -->
         
         <div class="row mb-5">
             <div class="col-12 mb-4">
@@ -119,7 +120,7 @@
                             <div class="motivation-text">
                                 <ul class="motivation-list mb-0">
                                     <li>The dominant MLLM research paradigm has focused primarily on the LLM backbone or the MLLM itself, leaving the vision encoder under-analyzed.</li>
-                                    <li>This oversight impedes a deeper understanding of how modern MLLM training strategies, such as Supervised Finetuning (SFT) and Reinforcement Learning (RL), truly impact the model.</li>
+                                    <li>This oversight impedes a deeper understanding of how modern MLLM training strategies, such as Supervised Finetuning (SFT) and Reinforcement Learning (RL), impact the model.</li>
                                 </ul>
                             </div>
                         </div>
@@ -133,75 +134,74 @@
 
 
 
-        <!-- Vision Model Scales Section -->
-        <section id="scaling-experiments">
-            <div class="row">
-                <div class="col-lg-11 mx-auto">
-                    <h2 class="section-title">Scaling Visual SSL</h2>
-                    
-                    <!-- Model Scaling Visualization -->
-                    <div class="row mb-5">
-                        <div class="col-lg-12">
-                            <div class="scaling-card vit-scaling p-4">
-                                <h3 class="scaling-title text-center mb-4">Effect of Model Scaling</h3>
-                                <div class="row">
-                                    <!-- Chart visualization -->
-                                    <div class="col-12 mb-4">
-                                        <div class="figure-container">
-                                            <img src="assets/figures-old/scale_model_wide_gradient.png" alt="Model scaling visualization showing Web-DINO outperforming CLIP at larger sizes" class="img-fluid" style="width: 100%; max-width: 1200px; margin: 0 auto; display: block;">
-                                            <div class="figure-caption text-center mt-3">
-                                                <strong>Model scaling:</strong> Web-DINO performance improves consistently with increasing parameter count (+4.9% from 1B to 7B), while CLIP performance plateaus beyond 3B parameters (+0.7% from 1B to 7B). All models are trained on 2B images from MetaCLIP (MC-2B).
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 mt-2">
-                                        <div class="findings-box">
-                                            <h5 class="mb-3">Key Findings</h5>
-                                            <ul class="mb-0 ps-3">
-                                                <li class="mb-2"><strong>Scaling Behavior</strong>: Web-DINO improves consistently with model size.</li>
-                                                <li class="mb-2"><strong>Task-Specific Gains</strong>: OCR & Chart performance improves the most (+8.2%), followed by Vision-Centric (+5.9%) from 1B to 7B params.</li>
-                                                <li class="mb-2"><strong>DINO vs. CLIP</strong>: Web-DINO matches CLIP at 5B parameters, and outperforms CLIP at 7B parameters. </li>
-                                            </ul>
-                                        </div>
+<!-- @@@@@@@@@@@@@@@@@ MLLM on SFT and RL @@@@@@@@@@@@@@@@@ -->
+<section id="scaling-experiments">
+    <div class="row">
+        <div class="col-lg-11 mx-auto">
+            <h2 class="section-title">How do SFT and RL affect MLLMs?</h2>
+            <p>
+                The impact of MLLM training strategies is first investigated using 
+                <span class="study-highlight">
+                    common VQA benchmarks.
+                    <span class="study-hover-image">
+                        <img src="assets/figures/benchmarks.jpg" alt="SFT vs RL comparison graphic">
+                    </span>
+                </span>
+                This contrasts with
+                <span class="study-highlight">
+                    previous SFT versus RL studies,
+                    <span class="study-hover-image">
+                        <img src="assets/figures/mllm-works.jpg" alt="SFT vs RL comparison graphic">
+                    </span>
+                </span>
+                which performed comparisons in specialized environments like card games or robot action planning.
+                Our analysis aims to answer: How do SFT and DPO affect MLLM on diverse VQA tasks? Is DPO actually superior to SFT? Does this trend hold with model scaling?
+            </p>
+
+            
+            <!-- Model Scaling Visualization -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="scaling-card mllm-scaling p-4">
+                        <!-- <h3 class="scaling-title text-center mb-4">Investigating MLLM training strategies (SFT and DPO) impact on MLLM performance in common benchmarks.</h3> -->
+                        <!-- <h5 class="text-center mb-4">Investigating MLLM training strategies (SFT & DPO) impact on MLLM performance in common benchmarks.</h5> -->
+                        <!-- <p class="text-center mb-2">Here</p> -->
+                        <div class="row">
+                            <!-- Chart visualization -->
+                            <div class="col-12 mb-4">
+                                <div class="figure-container">
+                                    <img src="assets/figures/scaling_mllm_vit.jpeg" alt="vit scaling visualization" class="img-fluid" style="width: 100%; max-width: 1200px; margin: 0 auto; display: block;">
+                                    <div class="figure-caption text-center mt-2">
+                                        <strong>Scaling the vision encoder in MLLMs:</strong> Performance is reported as the SigLIP2 vision model scales from 86M to 1B with a fixed Qwen2.5-3B language model.
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Data Scaling Visualization -->
-                    <div class="row mt-2">
-                        <div class="col-lg-12">
-                            <div class="scaling-card llm-scaling p-4">
-                                <h3 class="scaling-title text-center mb-4">Effect of Number of Training Samples</h3>
-                                <div class="row">
-                                    <!-- Chart visualization -->
-                                    <div class="col-12 mb-4">
-                                        <div class="figure-container">
-                                            <img src="assets/figures-old/scaling_dino_data_with_clip.png" alt="Data scaling visualization showing continuous improvement with more training data" class="img-fluid" style="width: 100%; max-width: 1200px; margin: 0 auto; display: block;">
-                                            <div class="figure-caption text-center mt-3">
-                                                <strong>Training data size analysis:</strong> Web-DINO ViT-7B continues to improve with more training samples (+4.2% from 1B to 8B), with OCR & Chart tasks exhibiting the most significant improvements (+12.6% from 1B to 8B).
-                                            </div>
-                                        </div>
+                            <div class="col-12 mb-4">
+                                <div class="figure-container">
+                                    <img src="assets/figures/scaling_mllm_lm.jpeg" alt="Model scaling visualization" class="img-fluid" style="width: 100%; max-width: 1200px; margin: 0 auto; display: block;">
+                                    <div class="figure-caption text-center mt-2">
+                                        <strong>Scaling the language model in MLLMs:</strong> Performance is reported as the Qwen2.5 language model scales from 0.5B to 7B with a fixed SigLIP2-So/16 vision encoder.
                                     </div>
-                                    <div class="col-md-12 mt-2">
-                                        <div class="findings-box">
-                                            <h5 class="mb-3">Task-Specific Insights</h5>
-                                            <ul class="mb-0 ps-3">
-                                                <li class="mb-2"><strong>General VQA</strong>: Slight improvement (+1.1%) with diminishing returns after 2B examples.</li>
-                                                <li class="mb-2"><strong>Knowledge VQA</strong>: Modest improvements (+1.5%) with diminishing returns after 2B examples.</li>
-                                                <li class="mb-2"><strong>OCR & Chart</strong>: Significant improvements with no sign of saturation (+12.6%).</li>
-                                                <li><strong>DINO vs. CLIP</strong>: Web-DINO consistently outperforms CLIP per fixed amount of training data.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="px-3">
+                                    <h4 class="mb-1" style="color: var(--secondary-color);">Findings:</h4>
+                                    <ul class="findings-list">
+                                        <li class="finding-item">The performance improves with the size of the vision encoder, underscoring the importance of the visual representation capacity within MLLMs even though the LM size is also a critical factor.</li>
+                                        <li class="finding-item">DPO achieves superior performance compared to SFT, particularly on strongly vision-related tasks, motivating an in-depth analysis of how these learning strategies impact the visual representation in MLLMs.</li>
+                                    </ul>
+                                    <!-- <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            
+        </div>
+    </div>
+</section>
 
 
 <!-- @@@@@@@@@@@@@@@@@ Correspondence @@@@@@@@@@@@@@@@@ -->

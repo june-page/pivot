@@ -891,7 +891,7 @@ html, body {
 }
 
 /* Make sure the charts have proper width on all screens */
-#scaling-experiments .scaling-card.vit-scaling,
+#scaling-experiments .scaling-card.mllm-scaling,
 #scaling-experiments .scaling-card.llm-scaling {
   padding: 20px !important;
 }
@@ -943,5 +943,11 @@ html, body {
 
     .motivation-list {
         padding-left: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .study-hover-image {
+        display: none !important;
     }
 }
