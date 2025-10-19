@@ -24,18 +24,22 @@
 <body>
     <!-- Navigation -->
 
-    <!-- Header Section -->
+<!-- @@@@@@@@@@@@@@@@@ HEAD @@@@@@@@@@@@@@@@@ -->
     <header class="header-section" id="overview">
         <div class="container">
             <div class="row">
                 <div class="col-lg-11 mx-auto text-center" >
                     <h1 class="paper-title">RL makes MLLMs see better than SFT</h1>
                     <div class="author-line">
-                        <span><a href="https://www.junha.page/p/about.html" class="author-link">Junha Song<sup>1,2</sup></a></span>
+                        <span><a href="https://www.junha.page/p/about.html" class="author-link">Junha Song<sup>1,2,*</sup></a></span>
                         <span><a href="https://sangdooyun.github.io/" class="author-link">Sangdoo Yun<sup>2</sup></a></span>
                         <span><a href="https://sites.google.com/site/dyhan0920/" class="author-link">Dongyoon Han<sup>2</sup></a></span>
                         <span><a href="https://sites.google.com/site/jaegulchoo/" class="author-link">Jaegul Choo<sup>1</sup></a></span>
-                        <span><a href="https://sites.google.com/view/byeongho-heo/home" class="author-link">Byeongho Heo<sup>2</sup></a></span>
+                        <span><a href="https://sites.google.com/view/byeongho-heo/home" class="author-link">Byeongho Heo<sup>2,†</sup></a></span>
+                    </div>
+                    <div class="equal-contribution mt-2">
+                        <span><sup>†</sup>Project lead</span>
+                        <span><sup>†</sup>Corresponding author</span>
                     </div>
                     <div class="institution-logos mt-4">
                         <div class="institution-logo-wrapper">
@@ -63,8 +67,8 @@
     <!-- Main Content -->
     <main class="container">
         <!-- New TLDR Section -->
-        <!-- Enhanced TLDR Section -->
-<!-- Enhanced TLDR Section -->
+
+<!-- @@@@@@@@@@@@@@@@@ TLDR @@@@@@@@@@@@@@@@@ -->
 <section class="row" id="tldr">
     <div class="col-lg-11 mx-auto">
         <div class="tldr-box p-4 rounded mb-5 mt-4" style="background-color: rgba(112, 237, 119, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);">
@@ -85,7 +89,7 @@
                         
                         <p class="mb-4 lead" style="font-size: 1.2rem; font-weight: 500; text-align: left;"><strong>Yes—and the training recipe matters!</strong> Our research shows that training with RL (e.g., DPO) produces stronger, more precisely localized visual representations than SFT. This translates to superior performance not only on MLLM benchmarks (especially strongly vision-related VQA tasks) but also on classic vision tasks like ImageNet classification and segmentation. If your goal is to improve the vision encoder itself for MLLM development, DPO is the more effective path.</p>
                         <div class="figure-container mb-0 mx-auto" style="box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); max-width: 800px;">
-                            <img src="assets/figures/tldr.png" alt="Web-SSL Scaling Performance" class="img-fluid rounded">
+                            <img src="assets/figures/tldr.png" alt="rl-makes-mllms-see-better" class="img-fluid rounded">
                         </div>
                     </div>
                 </div>
@@ -95,6 +99,70 @@
 </section>
 
         
+
+
+<!-- @@@@@@@@@@@@@@@@@ Motivation @@@@@@@@@@@@@@@@@ -->
+<section class="row" id="approach">
+    <div class="col-lg-11 mx-auto">
+        <h2 class="section-title">RL vs. SFT in MLLMs & <i>Vision Encoder</i></h2>
+        
+        <div class="row mb-5">
+            <div class="col-12 mb-4">
+                <div class="card h-100 border-0 shadow-sm motivation-card">
+                    <div class="card-body p-4">
+                        <div class="motivation-content">
+                            <div class="motivation-figure mb-4 mb-md-0">
+                                <div class="figure-container gradient-figure">
+                                    <img src="assets/figures/simpsons.jpg" alt="SFT vs RL illustration" class="img-fluid rounded">
+                                </div>
+                            </div>
+                            <div class="motivation-text">
+                                <ul class="motivation-list mb-0">
+                                    <li>The dominant MLLM research paradigm has focused primarily on the LLM backbone or the MLLM itself, leaving the vision encoder under-analyzed.</li>
+                                    <li>This oversight impedes a deeper understanding of how modern MLLM training strategies, such as Supervised Finetuning (SFT) and Reinforcement Learning (RL), truly impact the model.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<!-- @@@@@@@@@@@@@@@@@ Correspondence @@@@@@@@@@@@@@@@@ -->
+<section>
+    <div class="row">
+        <div class="col-lg-11 mx-auto text-center">
+            <h2 class="section-title">Correspondence</h2>
+            <p>Please reach out to Junha Song with any questions.</p>
+            <p>sb020518@kaist.ac.kr</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="row">
+        <div class="col-lg-11 mx-auto text-center">
+            <h2 class="section-title">Acknowledgements</h2>
+            <p>Special thanks to the 
+                <a href="https://naver-career.gitbook.io/en/teams/clova-cic/ai-lab" target="_blank" rel="noopener noreferrer"><em>NAVER AI teams</em></a>
+                for their generous support.
+            </p>  
+            <p>
+                This project page was developed with reference to the awesome project
+                <a href="https://davidfan.io/webssl/" target="_blank" rel="noopener noreferrer"><em>Web-SSL</em></a>.
+                We sincerely appreciate the creators for their inspiring work.
+              </p>
+        </div>
+    </div>
+</section>
+
+
 
 <style>
     .question-header {

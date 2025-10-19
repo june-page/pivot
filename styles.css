@@ -1312,3 +1312,63 @@ p.lead.fw-bold strong {
 .custom-nav-pills .nav-link {
     transition: all 0.3s ease;
 }
+
+.motivation-card {
+    background: var(--card-background);
+    border-radius: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.motivation-content {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: nowrap;
+}
+
+.motivation-figure {
+    flex: 0 1 360px;
+    max-width: clamp(360px, 40vw, 420px);
+    width: 100%;
+}
+
+
+.gradient-figure {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 18px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gradient-figure:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gradient-figure img {
+    border-radius: 12px;
+    display: block;
+    width: 100%;
+}
+
+.motivation-text {
+    flex: 1 1 auto;
+}
+
+.motivation-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.motivation-list li {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.motivation-list li:last-child {
+    margin-bottom: 0;
+}
