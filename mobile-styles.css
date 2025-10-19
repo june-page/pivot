@@ -891,8 +891,8 @@ html, body {
 }
 
 /* Make sure the charts have proper width on all screens */
-#scaling-experiments .scaling-card.model-scaling,
-#scaling-experiments .scaling-card.data-scaling {
+#scaling-experiments .scaling-card.vit-scaling,
+#scaling-experiments .scaling-card.llm-scaling {
   padding: 20px !important;
 }
 

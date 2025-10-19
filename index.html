@@ -133,6 +133,76 @@
 
 
 
+        <!-- Vision Model Scales Section -->
+        <section id="scaling-experiments">
+            <div class="row">
+                <div class="col-lg-11 mx-auto">
+                    <h2 class="section-title">Scaling Visual SSL</h2>
+                    
+                    <!-- Model Scaling Visualization -->
+                    <div class="row mb-5">
+                        <div class="col-lg-12">
+                            <div class="scaling-card vit-scaling p-4">
+                                <h3 class="scaling-title text-center mb-4">Effect of Model Scaling</h3>
+                                <div class="row">
+                                    <!-- Chart visualization -->
+                                    <div class="col-12 mb-4">
+                                        <div class="figure-container">
+                                            <img src="assets/figures-old/scale_model_wide_gradient.png" alt="Model scaling visualization showing Web-DINO outperforming CLIP at larger sizes" class="img-fluid" style="width: 100%; max-width: 1200px; margin: 0 auto; display: block;">
+                                            <div class="figure-caption text-center mt-3">
+                                                <strong>Model scaling:</strong> Web-DINO performance improves consistently with increasing parameter count (+4.9% from 1B to 7B), while CLIP performance plateaus beyond 3B parameters (+0.7% from 1B to 7B). All models are trained on 2B images from MetaCLIP (MC-2B).
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mt-2">
+                                        <div class="findings-box">
+                                            <h5 class="mb-3">Key Findings</h5>
+                                            <ul class="mb-0 ps-3">
+                                                <li class="mb-2"><strong>Scaling Behavior</strong>: Web-DINO improves consistently with model size.</li>
+                                                <li class="mb-2"><strong>Task-Specific Gains</strong>: OCR & Chart performance improves the most (+8.2%), followed by Vision-Centric (+5.9%) from 1B to 7B params.</li>
+                                                <li class="mb-2"><strong>DINO vs. CLIP</strong>: Web-DINO matches CLIP at 5B parameters, and outperforms CLIP at 7B parameters. </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Data Scaling Visualization -->
+                    <div class="row mt-2">
+                        <div class="col-lg-12">
+                            <div class="scaling-card llm-scaling p-4">
+                                <h3 class="scaling-title text-center mb-4">Effect of Number of Training Samples</h3>
+                                <div class="row">
+                                    <!-- Chart visualization -->
+                                    <div class="col-12 mb-4">
+                                        <div class="figure-container">
+                                            <img src="assets/figures-old/scaling_dino_data_with_clip.png" alt="Data scaling visualization showing continuous improvement with more training data" class="img-fluid" style="width: 100%; max-width: 1200px; margin: 0 auto; display: block;">
+                                            <div class="figure-caption text-center mt-3">
+                                                <strong>Training data size analysis:</strong> Web-DINO ViT-7B continues to improve with more training samples (+4.2% from 1B to 8B), with OCR & Chart tasks exhibiting the most significant improvements (+12.6% from 1B to 8B).
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mt-2">
+                                        <div class="findings-box">
+                                            <h5 class="mb-3">Task-Specific Insights</h5>
+                                            <ul class="mb-0 ps-3">
+                                                <li class="mb-2"><strong>General VQA</strong>: Slight improvement (+1.1%) with diminishing returns after 2B examples.</li>
+                                                <li class="mb-2"><strong>Knowledge VQA</strong>: Modest improvements (+1.5%) with diminishing returns after 2B examples.</li>
+                                                <li class="mb-2"><strong>OCR & Chart</strong>: Significant improvements with no sign of saturation (+12.6%).</li>
+                                                <li><strong>DINO vs. CLIP</strong>: Web-DINO consistently outperforms CLIP per fixed amount of training data.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
 <!-- @@@@@@@@@@@@@@@@@ Correspondence @@@@@@@@@@@@@@@@@ -->
 <section>
@@ -161,6 +231,10 @@
         </div>
     </div>
 </section>
+
+
+
+
 
 
 

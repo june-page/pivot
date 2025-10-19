@@ -497,12 +497,12 @@ body {
     height: 5px;
 }
 
-.model-scaling::before {
+.vit-scaling::before {
     background: var(--primary-color);
 }
 
-.data-scaling::before {
-    background: var(--accent-color);
+.llm-scaling::before {
+    background: var(--secondary-color);
 }
 
 .scaling-title {
@@ -517,12 +517,12 @@ body {
     margin-bottom: 15px;
 }
 
-.model-scaling .scaling-icon {
+.vit-scaling .scaling-icon {
     color: var(--primary-color);
 }
 
-.data-scaling .scaling-icon {
-    color: var(--accent-color);
+.llm-scaling .scaling-icon {
+    color: var(--secondary-color);
 }
 
 /* Findings list */
@@ -1327,8 +1327,8 @@ p.lead.fw-bold strong {
 }
 
 .motivation-figure {
-    flex: 0 1 360px;
-    max-width: clamp(360px, 40vw, 420px);
+    flex: none;
+    max-width: 460px;
     width: 100%;
 }
 
