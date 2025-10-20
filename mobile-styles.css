@@ -76,6 +76,17 @@
       width: 80%;
       max-width: 250px;
     }
+
+    .question-header {
+      align-items: center;
+      gap: 10px;
+    }
+
+    .question-toggle {
+      width: 34px;
+      height: 34px;
+    }
+
   }
   
   /* ===== TLDR Section Improvements ===== */

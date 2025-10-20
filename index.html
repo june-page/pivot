@@ -18,7 +18,7 @@
     <link href="styles.css" rel="stylesheet">
     <link href="theme_neutral_light.css" rel="stylesheet">
     <!-- Add this line after your existing stylesheets -->
-<link href="mobile-styles.css" rel="stylesheet">
+<!-- <link href="mobile-styles.css" rel="stylesheet"> -->
 <link href="nav-pill-fix.css" rel="stylesheet">
 </head>
 <body>
@@ -119,7 +119,14 @@
                             </div>
                             <div class="motivation-text">
                                 <ul class="motivation-list mb-0">
-                                    <li>The dominant MLLM research paradigm has focused primarily on the LLM backbone or the MLLM itself, leaving the vision encoder under-analyzed.</li>
+                                    <li>The dominant 
+                                        <span class="study-highlight">
+                                        MLLM
+                                        <span class="study-hover-image">
+                                            <img src="assets/figures/mllm.png" alt="architecture of mllm">
+                                        </span>
+                                    </span> 
+                                        research paradigm has focused primarily on the LLM backbone or the MLLM itself, leaving the vision encoder under-analyzed.</li>
                                     <li>This oversight impedes a deeper understanding of how modern MLLM training strategies, such as Supervised Finetuning (SFT) and Reinforcement Learning (RL), impact the model.</li>
                                 </ul>
                             </div>
@@ -159,15 +166,10 @@
             </p>
 
             
-            <!-- Model Scaling Visualization -->
             <div class="row mb-5">
                 <div class="col-lg-12">
                     <div class="scaling-card mllm-scaling p-4">
-                        <!-- <h3 class="scaling-title text-center mb-4">Investigating MLLM training strategies (SFT and DPO) impact on MLLM performance in common benchmarks.</h3> -->
-                        <!-- <h5 class="text-center mb-4">Investigating MLLM training strategies (SFT & DPO) impact on MLLM performance in common benchmarks.</h5> -->
-                        <!-- <p class="text-center mb-2">Here</p> -->
                         <div class="row">
-                            <!-- Chart visualization -->
                             <div class="col-12 mb-4">
                                 <div class="figure-container">
                                     <img src="assets/figures/scaling_mllm_vit.jpeg" alt="vit scaling visualization" class="img-fluid" style="width: 100%; max-width: 1200px; margin: 0 auto; display: block;">
@@ -186,12 +188,11 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="px-3">
-                                    <h4 class="mb-1" style="color: var(--secondary-color);">Findings:</h4>
+                                    <h4 class=" mt-4 mb-0" style="color: var(--secondary-color);">Findings:</h4>
                                     <ul class="findings-list">
                                         <li class="finding-item">The performance improves with the size of the vision encoder, underscoring the importance of the visual representation capacity within MLLMs even though the LM size is also a critical factor.</li>
                                         <li class="finding-item">DPO achieves superior performance compared to SFT, particularly on strongly vision-related tasks, motivating an in-depth analysis of how these learning strategies impact the visual representation in MLLMs.</li>
                                     </ul>
-                                    <!-- <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p> -->
                                 </div>
                             </div>
                         </div>
@@ -202,6 +203,125 @@
         </div>
     </div>
 </section>
+
+
+<section id="scaling-experiments">
+    <div class="row">
+        <div class="col-lg-11 mx-auto">
+            <h2 class="section-title">How does MLLM training affect visual representations?</h2>
+
+            <div class="custom-nav-pills mb-4">
+                <a class="nav-link" href="index.html#imagenet">ImageNet classification</a>
+                <a class="nav-link" href="index.html#gradcam">Gradient visualization</a>
+                <a class="nav-link" href="index.html#segmentation">Semantic segmentation</a>
+                <a class="nav-link" href="index.html#platonic">Vision&Language alignment</a>
+            </div>
+
+            <div class="scaling-card mllm-scaling p-4">
+                <div class="row">
+
+                    <div class="col-12 mb-0">
+                        <div id="imagenet" class="research-question">
+                            <div class="question-header">
+                                <div class="question-number">1</div>
+                                <h3 class="question-title">Does the observed scaling behavior generalize to other visual SSL methods?</h3>
+                                <button
+                                class="question-toggle"
+                                type="button"
+                                aria-expanded="false"
+                                >
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="question-content" id="imagenet-content" hidden>
+                                <div class="row align-items-center">
+                                <!-- <div class="row align-items-center"> -->
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                                            <img src="assets/figures-old/scaling_with_mae.png" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
+                                            <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">Comparison of Web-DINO and Web-MAE performance across model scales (1B-5B parameters)</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
+                                        <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mb-0">
+                        <div id="gradcam" class="research-question">
+                            <div class="question-header">
+                                <div class="question-number">2</div>
+                                <h3 class="question-title">Does the observed scaling behavior generalize to other visual SSL methods?</h3>
+                                <button
+                                class="question-toggle"
+                                type="button"
+                                aria-expanded="false"
+                                >
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="question-content" id="imagenet-content" hidden>
+                                <div class="row align-items-center">
+                                <!-- <div class="row align-items-center"> -->
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                                            <img src="assets/figures-old/scaling_with_mae.png" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
+                                            <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">Comparison of Web-DINO and Web-MAE performance across model scales (1B-5B parameters)</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
+                                        <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <!-- <div class="col-12 mb-0">
+                        <div id="platonic" class="research-question">
+                            <div class="question-header">
+                                <div class="question-number">4</div>
+                                <h3 class="question-title">Does the observed scaling behavior generalize to other visual SSL methods?</h3>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col-md-7">
+                                    <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
+                                    <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                                        <img src="assets/figures-old/scaling_with_mae.png" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
+                                        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">across model scales (1B-5B parameters)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="col-md-12">
+                        <div class="px-3">
+                            <h4 class="mt-4 mb-0" style="color: var(--secondary-color);">Findings:</h4>
+                            <ul class="findings-list">
+                                <li class="finding-item">The performance improves with the size of the vision encoder, underscoring the importance of the visual representation capacity within MLLMs even though the LM size is also a critical factor.</li>
+                                <li class="finding-item">DPO achieves superior performance compared to SFT, particularly on strongly vision-related tasks, motivating an in-depth analysis of how these learning strategies impact the visual representation in MLLMs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<script src="question-toggle.js"></script>
 
 
 <!-- @@@@@@@@@@@@@@@@@ Correspondence @@@@@@@@@@@@@@@@@ -->

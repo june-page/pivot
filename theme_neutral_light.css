@@ -27,6 +27,11 @@
     --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
     --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.06);
     --transition: all 0.3s ease;
+
+    --question-toggle-bg: rgba(132, 178, 97, 0.15);
+    --question-toggle-bg-hover: rgba(132, 178, 97, 0.28);
+    --question-toggle-icon-color: var(--secondary-color);
+
 }
 
 /* Button hover states */
