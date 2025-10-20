@@ -549,8 +549,8 @@ body {
     background: var(--primary-color);
 }
 
-.llm-scaling::before {
-    background: var(--secondary-color);
+.vision-anlaysis::before {
+    background: var(--background-color);
 }
 
 .scaling-title {

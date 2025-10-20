@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1200">
     <!-- For social media thumbnail preview -->
     <meta property="og:image" content="https://github.com/june-page/pivot/blob/main/assets/figures/thumbnail.png?raw=true" />
     <title>RL makes MLLMs see better than SFT</title>
@@ -18,7 +18,7 @@
     <link href="styles.css" rel="stylesheet">
     <link href="theme_neutral_light.css" rel="stylesheet">
     <!-- Add this line after your existing stylesheets -->
-<link href="mobile-styles.css" rel="stylesheet">
+<!-- <link href="mobile-styles.css" rel="stylesheet"> -->
 <link href="nav-pill-fix.css" rel="stylesheet">
 </head>
 <body>
@@ -205,6 +205,7 @@
 </section>
 
 
+<!-- @@@@@@@@@@@@@@@@@ Vision on SFT and RL @@@@@@@@@@@@@@@@@ -->
 <section id="scaling-experiments">
     <div class="row">
         <div class="col-lg-11 mx-auto">
@@ -217,7 +218,7 @@
                 <a class="nav-link" href="index.html#platonic">Vision&Language alignment</a>
             </div>
 
-            <div class="scaling-card mllm-scaling p-4">
+            <div class="scaling-card vision-anlaysis p-4">
                 <div class="row">
 
                     <div class="col-12 mb-0">
@@ -282,28 +283,6 @@
                         </div>
                     </div>
                     
-
-                    <!-- <div class="col-12 mb-0">
-                        <div id="platonic" class="research-question">
-                            <div class="question-header">
-                                <div class="question-number">4</div>
-                                <h3 class="question-title">Does the observed scaling behavior generalize to other visual SSL methods?</h3>
-                            </div>
-                            <div class="row align-items-center">
-                                <div class="col-md-7">
-                                    <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
-                                    <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
-                                        <img src="assets/figures-old/scaling_with_mae.png" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
-                                        <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">across model scales (1B-5B parameters)</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
                     <div class="col-md-12">
                         <div class="px-3">
                             <h4 class="mt-4 mb-0" style="color: var(--secondary-color);">Findings:</h4>
