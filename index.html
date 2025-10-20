@@ -122,7 +122,7 @@
                                     <li>The dominant 
                                         <span class="study-highlight">
                                         MLLM
-                                        <span class="study-hover-image">
+                                        <i class="fa-solid fa-arrow-pointer fa-xs"></i><span class="study-hover-image">
                                             <img src="assets/figures/mllm.png" alt="architecture of mllm">
                                         </span>
                                     </span> 
@@ -150,14 +150,14 @@
                 The impact of MLLM training strategies is first investigated using 
                 <span class="study-highlight">
                     common VQA benchmarks.
-                    <span class="study-hover-image">
+                    <i class="fa-solid fa-arrow-pointer fa-xs"></i><span class="study-hover-image">
                         <img src="assets/figures/benchmarks.jpg" alt="SFT vs RL comparison graphic">
                     </span>
                 </span>
                 This contrasts with
                 <span class="study-highlight">
                     previous SFT versus RL studies,
-                    <span class="study-hover-image">
+                    <i class="fa-solid fa-arrow-pointer fa-xs"></i><span class="study-hover-image">
                         <img src="assets/figures/mllm-works.jpg" alt="SFT vs RL comparison graphic">
                     </span>
                 </span>
@@ -210,6 +210,16 @@
     <div class="row">
         <div class="col-lg-11 mx-auto">
             <h2 class="section-title">How does MLLM training affect visual representations?</h2>
+            <p>
+                Now, the focus shifts to an in-depth analysis of the vision encoder within MLLMs.
+                <span class="study-highlight">
+                    This
+                    <i class="fa-solid fa-arrow-pointer fa-xs"></i><span class="study-hover-image">
+                        <img src="assets/figures/vision_eval.png" alt="SFT vs RL comparison graphic">
+                    </span>
+                </span>
+                is achieved by isolating the encoder and evaluating its standalone performance on classic vision tasks.
+            </p>
 
             <div class="custom-nav-pills mb-4">
                 <a class="nav-link" href="index.html#imagenet">ImageNet classification</a>
@@ -221,30 +231,98 @@
             <div class="scaling-card vision-anlaysis p-4">
                 <div class="row">
 
+                    <!-- 1. ImageNet -->
                     <div class="col-12 mb-0">
                         <div id="imagenet" class="research-question">
                             <div class="question-header">
                                 <div class="question-number">1</div>
-                                <h3 class="question-title">Does the observed scaling behavior generalize to other visual SSL methods?</h3>
-                                <button
-                                class="question-toggle"
-                                type="button"
-                                aria-expanded="false"
-                                >
+                                <h3 class="question-title">Does MLLM training really reshape visual representations?</h3>
+                                <button class="question-toggle" type="button" aria-expanded="false">
                                 <i class="fas fa-chevron-right" aria-hidden="true"></i>
                                 </button>
                             </div>
                             <div class="question-content" id="imagenet-content" hidden>
                                 <div class="row align-items-center">
-                                <!-- <div class="row align-items-center"> -->
                                     <div class="col-md-6">
                                         <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
-                                            <img src="assets/figures-old/scaling_with_mae.png" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
-                                            <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">Comparison of Web-DINO and Web-MAE performance across model scales (1B-5B parameters)</p>
+                                            <img src="assets/figures/imagenet.png" alt="ImageNet performance" class="img-fluid rounded">
+                                            <!-- <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">Comparison of Web-DINO and Web-MAE performance across model scales (1B-5B parameters)</p> -->
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
+                                        <p><strong>Yes, it does.</strong> In particular, DPO creates better visual representations for ImageNet classification than SFT.
+                                        This novel finding is the first to show that the prevalent DPO method (common in the LLM community) is also effective for enhancing visual representations.</p>
+                                        <p>Interestingly, MLLM training with larger LLMs yields a high-performing vision encoder, suggesting they provide a more informative optimization signal.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. GradCam -->
+                    <div class="col-12 mb-0">
+                        <div id="gradcam" class="research-question">
+                            <div class="question-header">
+                                <div class="question-number">2</div>
+                                <h3 class="question-title">Do DPO and SFT provide distinct gradient signals to the vision encoder?</h3>
+                                <button class="question-toggle" type="button" aria-expanded="false">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="question-content" id="imagenet-content" hidden>
+                                <div class="row align-items-center">
+                                    <div class="col-md-5">
+                                        <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                                            <img src="assets/figures/gradcam-main.jpeg" alt="gradient visual" class="img-fluid rounded">
+                                            <!-- <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">Comparison of Web-DINO and Web-MAE performance across model scales (1B-5B parameters)</p> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p><strong>Yes, and DPO provides a more fine-grained signal. </strong></p>
+                                        <p>
+                                            <span class="study-highlight">
+                                                Our experiment 
+                                                <i class="fa-solid fa-arrow-pointer fa-xs"></i><span class="study-hover-image">
+                                                    <img src="assets/figures/gradcam.jpeg" alt="gradcam setup">
+                                                </span>
+                                            </span>
+                                            visualizes gradients from different MLLM training strategies on the vision encoder using GradCam. The results indicate that DPO yields more focused gradients on question-relevant visual features, while the SFT signal is more dispersed. 
+                                        <!-- </p>
+                                        <p> -->
+                                            More results can be found
+                                            <span class="study-highlight">
+                                                here
+                                                <i class="fa-solid fa-arrow-pointer fa-xs"></i><span class="study-hover-image">
+                                                    <img src="assets/figures/gradcam-add.jpeg" alt="gradcam setup">
+                                                </span>
+                                            </span>
+                                            .
+                                        </p> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Segmentation -->
+                    <div class="col-12 mb-0">
+                        <div id="segmentation" class="research-question">
+                            <div class="question-header">
+                                <div class="question-number">3</div>
+                                <h3 class="question-title">Does DPO induce a vision encoder with better localization capabilities?</h3>
+                                <button class="question-toggle" type="button" aria-expanded="false">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="question-content" id="imagenet-content" hidden>
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                                            <img src="assets/figures/imagenet.png" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
+                                            <!-- <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">Comparison of Web-DINO and Web-MAE performance across model scales (1B-5B parameters)</p> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
                                         <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
                                     </div>
                                 </div>
@@ -252,43 +330,41 @@
                         </div>
                     </div>
 
+                    <!-- 4. Platonic -->
                     <div class="col-12 mb-0">
-                        <div id="gradcam" class="research-question">
+                        <div id="platonic" class="research-question">
                             <div class="question-header">
-                                <div class="question-number">2</div>
-                                <h3 class="question-title">Does the observed scaling behavior generalize to other visual SSL methods?</h3>
-                                <button
-                                class="question-toggle"
-                                type="button"
-                                aria-expanded="false"
-                                >
+                                <div class="question-number">4</div>
+                                <h3 class="question-title">What is the impact on platonic representational alignment?</h3>
+                                <button class="question-toggle" type="button" aria-expanded="false">
                                 <i class="fas fa-chevron-right" aria-hidden="true"></i>
                                 </button>
                             </div>
                             <div class="question-content" id="imagenet-content" hidden>
                                 <div class="row align-items-center">
-                                <!-- <div class="row align-items-center"> -->
                                     <div class="col-md-6">
                                         <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
-                                            <img src="assets/figures-old/scaling_with_mae.png" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
-                                            <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">Comparison of Web-DINO and Web-MAE performance across model scales (1B-5B parameters)</p>
+                                            <img src="assets/figures/imagenet.png" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
+                                            <!-- <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">Comparison of Web-DINO and Web-MAE performance across model scales (1B-5B parameters)</p> -->
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
                                         <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    
                     
                     <div class="col-md-12">
                         <div class="px-3">
                             <h4 class="mt-4 mb-0" style="color: var(--secondary-color);">Findings:</h4>
                             <ul class="findings-list">
-                                <li class="finding-item">The performance improves with the size of the vision encoder, underscoring the importance of the visual representation capacity within MLLMs even though the LM size is also a critical factor.</li>
-                                <li class="finding-item">DPO achieves superior performance compared to SFT, particularly on strongly vision-related tasks, motivating an in-depth analysis of how these learning strategies impact the visual representation in MLLMs.</li>
+                                <li class="finding-item">MLLM training not only adapts the language model but also reshapes the visual representations.</li>
+                                <li class="finding-item">DPO steers the vision encoder toward a more fine-grained analysis of visual information, improving its object localization capabilities.</li>
+                                <li class="finding-item">The vision encoder benefits from a larger LLM, which provides more informative backward signals for visual representation within an MLLM.</li>
                             </ul>
                         </div>
                     </div>

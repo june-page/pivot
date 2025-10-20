@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     close();
     questions.set(question.id, { open, close, toggle, question });
 
-    if (question.id === 'imagenet') {
+    if (question.id === 'imagenet' || question.id === 'gradcam') {
       open(); 
     }
 
