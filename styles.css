@@ -1539,3 +1539,7 @@ p.lead.fw-bold strong {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
 }
+
+.citation-box { 
+    background: #e8e8e8; 
+}
