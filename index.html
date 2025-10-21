@@ -14,6 +14,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts - Nunito as Avenir Next alternative -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="styles.css" rel="stylesheet">
     <link href="theme_neutral_light.css" rel="stylesheet">
@@ -281,7 +283,8 @@
                                                     <img src="assets/figures/gradcam.jpeg" alt="gradcam setup">
                                                 </span>
                                             </span>
-                                            visualizes gradients from different MLLM training strategies on the vision encoder using GradCam. The results indicate that DPO yields more focused gradients on question-relevant visual features, while the SFT signal is more dispersed. 
+                                            visualizes gradients from different MLLM training strategies on the vision encoder using <a href="https://arxiv.org/abs/1610.02391" target="_blank" rel="noopener noreferrer">Grad-Cam</a>. 
+                                            The results indicate that DPO yields more focused gradients on question-relevant visual features, while the SFT signal is more dispersed. 
                                         </p>
                                         <p>
                                             More results can be found
@@ -395,13 +398,18 @@
         <div class="col-lg-11 mx-auto">
             <h2 class="section-title">What’s next: Unlocking vision model potential via RL</h2>
             <p>
-                Updating soon
-                <!-- <span class="study-highlight">
-                    common VQA benchmarks.
+                Building on our finding that DPO benefits visual representation learning in MLLMs, we reframe this process as a simple recipe for evolving vision models for MLLMs—Preference-Instructed Vision Optimization (<span class="pivot-font">PIVOT</span>). 
+                Here, we assess the effectiveness of <span class="pivot-font">PIVOT</span>-enhanced representations within MLLMs, 
+                following prior 
+                <span class="study-highlight">
+                    evaluation protocols
                     <i class="fa-solid fa-arrow-pointer fa-xs"></i><span class="study-hover-image">
-                        <img src="assets/figures/benchmarks.jpg" alt="SFT vs RL comparison graphic">
+                        <img src="assets/figures/pivot-eval.jpeg" alt="pivot evaluation">
                     </span>
-                </span> -->
+                </span>
+                such as 
+                <a href="https://cambrian-mllm.github.io/" target="_blank" rel="noopener noreferrer">Cambrian</a> and 
+                <a href="https://davidfan.io/webssl/" target="_blank" rel="noopener noreferrer">Web-SSL</a>.
             </p>
 
             
@@ -413,7 +421,7 @@
                                 <div class="px-3">
                                     <h4 class="mt-4 mb-3" style="color: var(--secondary-color);">Findings:</h4>
                                     <ul class="findings-list">
-                                        <li class="finding-item">Existing vision models possess substantial potential for improvement within MLLMs, which can be unlocked by PIVOT.</li>
+                                        <li class="finding-item">Existing vision models possess substantial potential for improvement within MLLMs, which can be unlocked by <span class="pivot-font">PIVOT</span>.</li>
                                     </ul>
                                 </div>
                             </div>
