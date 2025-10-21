@@ -55,8 +55,8 @@
                     <div class="paper-subtitle">ICCV 2025 (Highlight)</div>
                     </div> -->
                     <div class="mt-4">
-                        <a href="https://june-page.github.io/pivot/" class="btn primary-btn me-2"><i class="fas fa-file-alt me-2"></i>Paper</a>
-                        <a href="https://june-page.github.io/pivot/" class="btn secondary-btn me-2"><i class="fab fa-github me-2"></i>Code</a>
+                        <a href="https://www.arxiv.org/abs/2510.16333/" class="btn primary-btn me-2"><i class="fas fa-file-alt me-2"></i>Paper</a>
+                        <a href="https://june-page.github.io/pivot/" class="btn secondary-btn me-2"><i class="fab fa-github me-2"></i>Code (coming soon)</a>
                     </div>
                 </div>
             </div>
@@ -246,12 +246,12 @@
                                     <div class="col-md-6">
                                         <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
                                             <img src="assets/figures/imagenet.png" alt="ImageNet performance" class="img-fluid rounded">
-                                            <p class="text-center mt-1 mb-0" style="font-size: 0.9rem; font-style: italic;">After MLLM post-training with either SFT or DPO, the vision encoder is detached and its standalone performance evaluated via linear probing.</p>
+                                            <p class="text-center mt-1 mb-0" style="font-size: 0.9rem; font-style: italic;">After MLLM training with either SFT or DPO, the vision encoder is detached and its standalone performance evaluated via linear probing.</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <p><strong>Yes, it does.</strong> In particular, DPO creates better visual representations for ImageNet classification than SFT.
-                                        This novel finding is the first to show that the prevalent DPO method (common in the LLM community) is also effective for enhancing visual representations.</p>
+                                        This novel finding shows that the prevalent DPO method (common in the LLM community) is also effective for enhancing visual representations.</p>
                                         <p>Interestingly, MLLM training with larger LLMs yields a high-performing vision encoder, suggesting they provide a more informative optimization signal.</p>
                                     </div>
                                 </div>
@@ -287,7 +287,7 @@
                                             <span class="study-highlight">
                                                 here
                                                 <i class="fa-solid fa-arrow-pointer fa-xs"></i><span class="study-hover-image">
-                                                    <img src="assets/figures/gradcam-add.jpeg" alt="gradcam setup">
+                                                    <img src="assets/figures/gradcam-add.jpeg" alt="gradcam visual 2">
                                                 </span>
                                             </span>
                                             .
@@ -317,18 +317,25 @@
                             <div class="question-content" id="imagenet-content" hidden>
                                 <div class="row align-items-center">
                                     <div class="col-md-6 mt-1">
-                                        <div class="p-2 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
-                                            <img src="assets/figures/segmen-quan.jpeg" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
+                                        <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                                            <img src="assets/figures/segmen-quan.jpeg" alt="segmentation quantitative" class="img-fluid rounded">
                                             <p class="text-center mt-1 mb-0" style="font-size: 0.9rem; font-style: italic;">Segmentation performance is evaluated via MLP probing on vision encoders trained with a Qwen2.5-1.5B LLM head.</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <p>Vision encoders trained with DPO and SFT show distinct localization behaviors. Notably, DPO-tuned encoders produce segmentation maps that align more closely with the ground truth.</p>
-                                        <p>Here are more qualitative results.</p>
+                                        <p>
+                                            <span class="study-highlight">
+                                                Here
+                                                <i class="fa-solid fa-arrow-pointer fa-xs"></i><span class="study-hover-image">
+                                                    <img src="assets/figures/segmen-qual-add.jpeg" alt="segmentation qualitative-2">
+                                                </span>
+                                            </span>
+                                            are more qualitative results.</p>
                                     </div>
-                                    <div class="col-md-12 mt-4">
-                                        <div class="p-2 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
-                                            <img src="assets/figures/segmen-qual.jpeg" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
+                                    <div class="col-md-12 mt-3">
+                                        <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                                            <img src="assets/figures/segmen-qual.jpeg" alt="segmentation qualitative" class="img-fluid rounded">
                                             <p class="text-center mt-1 mb-0" style="font-size: 0.9rem; font-style: italic;">Results from segmentation probing on the CLIP-L/14 336px encoder, which was trained with SFT and DPO within MLLMs, are visualized.</p>
                                         </div>
                                     </div>
@@ -342,21 +349,22 @@
                         <div id="platonic" class="research-question">
                             <div class="question-header">
                                 <div class="question-number">4</div>
-                                <h3 class="question-title">What is the impact on platonic representational alignment?</h3>
+                                <h3 class="question-title">What is the impact of MLLM training on vision & language alignment?</h3>
                                 <button class="question-toggle" type="button" aria-expanded="false">
                                 <i class="fas fa-chevron-right" aria-hidden="true"></i>
                                 </button>
                             </div>
                             <div class="question-content" id="imagenet-content" hidden>
                                 <div class="row align-items-center">
-                                    <div class="col-md-6">
-                                        <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
-                                            <img src="assets/figures/imagenet.png" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
-                                            <!-- <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">Comparison of Web-DINO and Web-MAE performance across model scales (1B-5B parameters)</p> -->
-                                        </div>
+                                    <div class="col-md-7">
+                                        <p>We compute vision–language alignment motivated by the Platonic Representational Hypothesis. The results show that DPO-trained vision encoders achieve stronger alignment scores compared to those trained with SFT.</p>
+                                        <p>Moreover, pairing with a larger LLM consistently leads to higher alignment scores, supporting our hypothesis that larger LLMs provide more useful training signals to the vision encoder.</p>
                                     </div>
-                                    <div class="col-md-6">
-                                        <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
+                                    <div class="col-md-5">
+                                        <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                                            <img src="assets/figures/platonic.jpeg" alt="platonic" class="img-fluid rounded">
+                                            <p class="text-center mt-1 mb-0" style="font-size: 0.9rem; font-style: italic;">Platonic representational alignment is measured between reference LLMs and the vision encoders of MLLMs trained with Qwen2.5 models (Y-axis: size of the Qwen2.5 model).</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
