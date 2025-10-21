@@ -211,7 +211,7 @@
  <script src="question-toggle.js"></script>
 <section id="vision-experiments">
     <div class="row">
-        <div class="col-lg-11 mx-auto">
+        <div class="col-lg-11 mx-auto mb-5">
             <h2 class="section-title">How does MLLM training affect visual representations?</h2>
             <p>
                 Now, the focus shifts to an in-depth analysis of the vision encoder within MLLMs. As illustrated in
@@ -410,16 +410,84 @@
                 such as 
                 <a href="https://cambrian-mllm.github.io/" target="_blank" rel="noopener noreferrer">Cambrian</a> and 
                 <a href="https://davidfan.io/webssl/" target="_blank" rel="noopener noreferrer">Web-SSL</a>.
+                It should be noted that <span class="pivot-font">PIVOT</span> is not proposed as a new method, but rather as an underexplored training regime that enables the development of better MLLMs than those using the original vision encoders.
             </p>
+            
 
             
             <div class="row mb-5">
                 <div class="col-lg-12">
                     <div class="scaling-card mllm-scaling p-4">
                         <div class="row">
+                            <div class="col-12 mb-0">
+                                <div id="imagenet" class="pivot-box">
+                                    <div class="pivot-box-content" id="imagenet-content">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-5">
+                                                <div class="p-4">
+                                                    <img src="assets/figures/pivot-1.jpeg" alt="pivot-1" class="img-fluid rounded">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <p>
+                                                    The results reveal a remarkable impact of <span class="pivot-font">PIVOT</span> when the enhanced encoders are used within MLLMs; 
+                                                    a vision model trained with <span class="pivot-font">PIVOT</span> not only outperforms its original counterpart but also surpasses a substantially larger model (e.g., SigLIP2-So/16+<span class="pivot-font">PIVOT</span> > SigLIP2-g/16) 
+                                                    and even a subsequent-generation encoder (e.g., SigLIP1-So/14+<span class="pivot-font">PIVOT</span> > SigLIP2-So/16). 
+                                                </p>
+                                                <p>
+                                                    Notably, this enhancement is achieved with just 18 hours of training on 8 H100 GPUs. This amounts to fewer than <strong>1%</strong> of GPUs of standard vision pre-training, with 
+                                                    <a href="https://arxiv.org/abs/2502.14786/" target="_blank" rel="noopener noreferrer">SigLIP2</a>
+                                                    trained on up to 2K TPUv5e chips.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-0">
+                                <div id="imagenet" class="pivot-box">
+                                    <div class="pivot-box-content" id="imagenet-content">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-5">
+                                                <p>When comparing vision encoders trained with different strategies within MLLMs, we find that a vision encoder enhanced with <span class="pivot-font">PIVOT</span> provides a greater advantage over one trained with SFT in MLLM applications.</p>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="p-2">
+                                                    <img src="assets/figures/pivot-2.jpeg" alt="pivot-1" class="img-fluid rounded">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-0">
+                                <div id="imagenet" class="pivot-box">
+                                    <div class="pivot-box-content" id="imagenet-content">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-7">
+                                                <div class="p-3">
+                                                    <img src="assets/figures/pivot-3.jpeg" alt="pivot-1" class="img-fluid rounded">
+                                                    <!-- <p class="text-center mt-1 mb-0" style="font-size: 0.9rem; font-style: italic;">After MLLM training with either SFT or DPO, the vision encoder is detached and its standalone performance evaluated via linear probing.</p> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <p>
+                                                    PIVOT also benefits a diverse set of vision encoders, including 
+                                                    <a href="https://arxiv.org/abs/2103.00020" target="_blank" rel="noopener noreferrer">CLIP</a>, 
+                                                    <a href="https://arxiv.org/abs/2111.06377" target="_blank" rel="noopener noreferrer">MAE</a>, 
+                                                    <a href="https://arxiv.org/abs/2304.07193" target="_blank" rel="noopener noreferrer">DINOv2</a>, and ImageNet-SupViT. 
+                                                    Interestingly, this improvement holds not only for vision-only self-supervised models such as MAE and 
+                                                    <a href="https://arxiv.org/abs/1911.05722" target="_blank" rel="noopener noreferrer">MOCO</a>,
+                                                    but also for vision–language supervised models like CLIP.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-md-12">
                                 <div class="px-3">
-                                    <h4 class="mt-4 mb-3" style="color: var(--secondary-color);">Findings:</h4>
+                                    <h4 class="mt-4 mb-3" style="color: var(--secondary-color);">Finding:</h4>
                                     <ul class="findings-list">
                                         <li class="finding-item">Existing vision models possess substantial potential for improvement within MLLMs, which can be unlocked by <span class="pivot-font">PIVOT</span>.</li>
                                     </ul>

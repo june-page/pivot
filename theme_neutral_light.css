@@ -91,7 +91,7 @@
 }
 
 /* Additional crisp theme adjustments */
-.abstract, .research-question, .figure-container, .card {
+.abstract, .research-question, .figure-container, .card .pivot-box {
     background-color: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.03);
 }
