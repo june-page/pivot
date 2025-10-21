@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1200">
     <!-- For social media thumbnail preview -->
-    <meta property="og:image" content="https://github.com/june-page/pivot/blob/main/assets/figures/thumbnail.png?raw=true" />
+    <meta property="og:image" content="https://github.com/june-page/pivot/blob/main/assets/figures/simpsons.jpg?raw=true" />
     <title>RL makes MLLMs see better than SFT</title>
     <!-- Bootstrap CSS -->
     <!-- <link href="vendor/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -31,16 +31,16 @@
                 <div class="col-lg-11 mx-auto text-center" >
                     <h1 class="paper-title">RL makes MLLMs see better than SFT</h1>
                     <div class="author-line">
-                        <span><a href="https://www.junha.page/p/about.html" class="author-link">Junha Song<sup>1,2,*</sup></a></span>
+                        <span><a href="https://www.junha.page/p/about.html" class="author-link">Junha Song<sup>1,2</sup></a></span>
                         <span><a href="https://sangdooyun.github.io/" class="author-link">Sangdoo Yun<sup>2</sup></a></span>
                         <span><a href="https://sites.google.com/site/dyhan0920/" class="author-link">Dongyoon Han<sup>2</sup></a></span>
                         <span><a href="https://sites.google.com/site/jaegulchoo/" class="author-link">Jaegul Choo<sup>1</sup></a></span>
-                        <span><a href="https://sites.google.com/view/byeongho-heo/home" class="author-link">Byeongho Heo<sup>2,†</sup></a></span>
+                        <span><a href="https://sites.google.com/view/byeongho-heo/home" class="author-link">Byeongho Heo<sup>2</sup></a></span>
                     </div>
-                    <div class="equal-contribution mt-2">
+                    <!-- <div class="equal-contribution mt-2">
                         <span><sup>†</sup>Project lead</span>
                         <span><sup>†</sup>Corresponding author</span>
-                    </div>
+                    </div> -->
                     <div class="institution-logos mt-4">
                         <div class="institution-logo-wrapper">
                             <img src="assets/logos/kaist.png" alt="KAIST" class="institution-logo">
@@ -188,7 +188,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="px-3">
-                                    <h4 class=" mt-4 mb-0" style="color: var(--secondary-color);">Findings:</h4>
+                                    <h4 class="mt-4 mb-3" style="color: var(--secondary-color);">Findings:</h4>
                                     <ul class="findings-list">
                                         <li class="finding-item">The performance improves with the size of the vision encoder, underscoring the importance of the visual representation capacity within MLLMs even though the LM size is also a critical factor.</li>
                                         <li class="finding-item">DPO achieves superior performance compared to SFT, particularly on strongly vision-related tasks, motivating an in-depth analysis of how these learning strategies impact the visual representation in MLLMs.</li>
@@ -211,14 +211,14 @@
         <div class="col-lg-11 mx-auto">
             <h2 class="section-title">How does MLLM training affect visual representations?</h2>
             <p>
-                Now, the focus shifts to an in-depth analysis of the vision encoder within MLLMs.
+                Now, the focus shifts to an in-depth analysis of the vision encoder within MLLMs. As illustrated in
                 <span class="study-highlight">
-                    This
+                    our experimental setup
                     <i class="fa-solid fa-arrow-pointer fa-xs"></i><span class="study-hover-image">
                         <img src="assets/figures/vision_eval.png" alt="SFT vs RL comparison graphic">
                     </span>
                 </span>
-                is achieved by isolating the encoder and evaluating its standalone performance on classic vision tasks.
+                , this is achieved by isolating the encoder and evaluating its standalone performance on classic vision tasks.
             </p>
 
             <div class="custom-nav-pills mb-4">
@@ -246,7 +246,7 @@
                                     <div class="col-md-6">
                                         <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
                                             <img src="assets/figures/imagenet.png" alt="ImageNet performance" class="img-fluid rounded">
-                                            <!-- <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">Comparison of Web-DINO and Web-MAE performance across model scales (1B-5B parameters)</p> -->
+                                            <p class="text-center mt-1 mb-0" style="font-size: 0.9rem; font-style: italic;">After MLLM post-training with either SFT or DPO, the vision encoder is detached and its standalone performance evaluated via linear probing.</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -271,12 +271,6 @@
                             </div>
                             <div class="question-content" id="imagenet-content" hidden>
                                 <div class="row align-items-center">
-                                    <div class="col-md-5">
-                                        <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
-                                            <img src="assets/figures/gradcam-main.jpeg" alt="gradient visual" class="img-fluid rounded">
-                                            <!-- <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">Comparison of Web-DINO and Web-MAE performance across model scales (1B-5B parameters)</p> -->
-                                        </div>
-                                    </div>
                                     <div class="col-md-7">
                                         <p><strong>Yes, and DPO provides a more fine-grained signal. </strong></p>
                                         <p>
@@ -287,8 +281,8 @@
                                                 </span>
                                             </span>
                                             visualizes gradients from different MLLM training strategies on the vision encoder using GradCam. The results indicate that DPO yields more focused gradients on question-relevant visual features, while the SFT signal is more dispersed. 
-                                        <!-- </p>
-                                        <p> -->
+                                        </p>
+                                        <p>
                                             More results can be found
                                             <span class="study-highlight">
                                                 here
@@ -298,6 +292,12 @@
                                             </span>
                                             .
                                         </p> 
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                                            <img src="assets/figures/gradcam-main.jpeg" alt="gradient visual" class="img-fluid rounded" >
+                                            <p class="text-center mt-1 mb-0" style="font-size: 0.9rem; font-style: italic;">Using Grad-CAM, the gradient signals corresponding to the vision encoder features during MLLM training are visualized.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -309,21 +309,28 @@
                         <div id="segmentation" class="research-question">
                             <div class="question-header">
                                 <div class="question-number">3</div>
-                                <h3 class="question-title">Does DPO induce a vision encoder with better localization capabilities?</h3>
+                                <h3 class="question-title">Do these distinct gradient signals translate to differences in the vision encoder's localization capabilities?</h3>
                                 <button class="question-toggle" type="button" aria-expanded="false">
                                 <i class="fas fa-chevron-right" aria-hidden="true"></i>
                                 </button>
                             </div>
                             <div class="question-content" id="imagenet-content" hidden>
                                 <div class="row align-items-center">
-                                    <div class="col-md-6">
-                                        <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
-                                            <img src="assets/figures/imagenet.png" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
-                                            <!-- <p class="text-center mt-2 mb-0" style="font-size: 0.9rem; font-style: italic;">Comparison of Web-DINO and Web-MAE performance across model scales (1B-5B parameters)</p> -->
+                                    <div class="col-md-6 mt-1">
+                                        <div class="p-2 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                                            <img src="assets/figures/segmen-quan.jpeg" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
+                                            <p class="text-center mt-1 mb-0" style="font-size: 0.9rem; font-style: italic;">Segmentation performance is evaluated via MLP probing on vision encoders trained with a Qwen2.5-1.5B LLM head.</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <p>These results demonstrate that the observed scaling behavior generalizes across different visual SSL methods, suggesting that this phenomenon is intrinsic to the visual self-supervised paradigm, rather than any specific method.</p>
+                                        <p>Vision encoders trained with DPO and SFT show distinct localization behaviors. Notably, DPO-tuned encoders produce segmentation maps that align more closely with the ground truth.</p>
+                                        <p>Here are more qualitative results.</p>
+                                    </div>
+                                    <div class="col-md-12 mt-4">
+                                        <div class="p-2 rounded shadow-sm" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                                            <img src="assets/figures/segmen-qual.jpeg" alt="Web-MAE vs Web-DINO performance comparison" class="img-fluid rounded">
+                                            <p class="text-center mt-1 mb-0" style="font-size: 0.9rem; font-style: italic;">Results from segmentation probing on the CLIP-L/14 336px encoder, which was trained with SFT and DPO within MLLMs, are visualized.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -360,7 +367,7 @@
                     
                     <div class="col-md-12">
                         <div class="px-3">
-                            <h4 class="mt-4 mb-0" style="color: var(--secondary-color);">Findings:</h4>
+                            <h4 class="mt-4 mb-3" style="color: var(--secondary-color);">Findings:</h4>
                             <ul class="findings-list">
                                 <li class="finding-item">MLLM training not only adapts the language model but also reshapes the visual representations.</li>
                                 <li class="finding-item">DPO steers the vision encoder toward a more fine-grained analysis of visual information, improving its object localization capabilities.</li>
